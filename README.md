@@ -34,3 +34,14 @@ CUDA_VISIBLE_DEVICES=0  python -m torch.distributed.launch --nproc_per_node=1 --
 ```
 
 ### sample
+```python
+CUDA_VISIBLE_DEVICES=0 python -m torch.distributed.launch --nproc_per_node=1 --master_port=12356 
+--use_env sample_seq2seq.py 
+--model_path  model_path
+--step diff_steps
+--batch_size batch_size 
+--seed2 123 
+--split valid 
+--out_dir generation_outputs 
+--top_p -1
+```
